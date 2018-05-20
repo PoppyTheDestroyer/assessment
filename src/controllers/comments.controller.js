@@ -15,9 +15,10 @@ class CommentsController {
       event.preventDefault();
       let id = event.target.id;
       let comment = this.$userText[id].value;
-      let commentNew = new Comment(id, comment);
-      //find image ID - set same as input ID
       let imageID = `image-${id}`
+      let commentNew = new Comment(comment, imageID);
+      //find image ID - set same as input ID
+      
       this.render(comment, id);
       document.getElementById("add-comment").reset();
     });
@@ -25,6 +26,6 @@ class CommentsController {
 
   render(comment, id) {
     //select correct ul
-    $(`#comments-${id}`).append(`<li>${comment}</li>`)
+    $(`#comments-${id}`).append(`<li id="newComm-${id}">${comment}</li>`)
   }
 }
