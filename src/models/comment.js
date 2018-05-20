@@ -20,7 +20,7 @@ class Comment {
     commentEl(comment, id) {
        return `<li id="newComm-${this.$id}">${this.$comment}</li>`
     }
-//push new comment into allComment array
+//push new Comment into allComment array
     all() {
         this.constructor.allComments.push(this);
         //console.log(this.constructor.allComments);
