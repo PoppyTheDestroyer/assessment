@@ -21,7 +21,7 @@ class CommentsController {
       //find image ID - set same as input ID
       let imageID = `image-${id}`;
       let commentNew = new Comment(comment, id);
-      console.log(commentNew);
+      //console.log(commentNew);
       this.render(commentNew);
       //Only resetting first form - id only applies to first - fix later
       document.getElementById("add-comment").reset();
