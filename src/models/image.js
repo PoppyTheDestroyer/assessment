@@ -14,7 +14,7 @@ Image.prototype.imageEl = function() {
     <h2><button class="destroy-image">x</button>${this.title}</h2>
     <ul id="image-${this.id}" data-id="${this.id}">
       <img src="${this.url}"></img>
-      <ul id="comments-${this.id}"></ul>
+      <ul id="comments-${this.id}" class="all-comments"></ul>
       <form id="add-comment" class="add-comment" data-id=${this.id} action="#" method="post">
         <label for="comment-description">Comment: </label>
         <input type="text" id="comment-description-${this.id}" class="user-text" name="comment-description" placeholder="comment">
@@ -28,6 +28,8 @@ Image.load = function() {
   Image.defaults.map(function(image){
     var newImage = new Image(image.title, image.url)
     ImagesController.render(newImage)
+    //remove comment out to demonstrate findImage()
+    //console.log(Image.all);
   })
 }
 
