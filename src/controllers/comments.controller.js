@@ -19,7 +19,7 @@ class CommentsController {
       //find image ID - set same as input ID
       let imageID = `image-${id}`
       this.render(comment, id);
-      this.$addCommentForm = "";
+      document.getElementById("add-comment").reset();
     });
   }
 
