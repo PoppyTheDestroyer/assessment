@@ -35,3 +35,7 @@ class CommentsController {
     $(list).append(listComment);
   }
 }
+
+$(".image-group").on("click", function() {
+  $(".user-text").focus();
+});

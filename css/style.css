@@ -1,0 +1,26 @@
+.btn {
+    margin: 10px;
+}
+
+input {
+    border-radius: 4px;
+}
+
+img {
+    max-width: 850px;
+    max-height: auto;
+}
+
+h1 {
+    margin: 15px;
+    text-align: center;
+}
+
+.image-group {
+    border: 1px #ddd;
+    max-width: 900px;
+}
+
+.comment-label {
+    margin-right: 5px;
+}
