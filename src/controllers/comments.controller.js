@@ -2,7 +2,6 @@ class CommentsController {
   constructor() {
     this.$submitComment = $(".submit");
     this.$userText = $(".user-text");
-    this.$allComments = $(".all-comments");
   }
 
   init() {
