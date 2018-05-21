@@ -1,37 +1,5 @@
-// create Comment class here
-class Comment {
-    constructor(comment, id) {
-        this.$comment = comment;
-        this.$id = id;
-
-        this.findImage(comment, id);
-        this.commentEl(comment, id);
-        this.all();
-    }
-
-    findImage(comment, id) {
-        //find image object from image.js
-        let commArray = Image.all[id].comments;
-        //push comment into object
-        commArray.push(comment);
-        return Image.all[id];
-    }
-
-    commentEl(comment, id) {
-       return `<li id="newComm-${this.$id}">${this.$comment}</li>`
-    }
-//push new comment into allComment array
-    all() {
-        this.constructor.allComments.push(this);
-        //console.log(this.constructor.allComments);
-    }
-}
-
-Comment.allComments = [];
-
 class CommentsController {
     constructor() {
-      this.$addCommentForm = $(".add-comment");
       this.$submitComment = $(".submit");
       this.$userText = $(".user-text");
       this.$allComments = $(".all-comments");
@@ -52,10 +20,9 @@ class CommentsController {
         //find image ID - set same as input ID
         let imageID = `image-${id}`;
         let commentNew = new Comment(comment, id);
-        console.log(commentNew);
+        //console.log(commentNew);
         this.render(commentNew);
-        //Only resetting first form - id only applies to first - fix later
-        document.getElementById("add-comment").reset();
+        document.getElementById(`add-comment-${id}`).reset();
       });
     }
   
@@ -64,8 +31,40 @@ class CommentsController {
       let list = `#comments-${commentNew.$id}`;
       //variable sets up commentEl function with new Comment
       let listComment = commentNew.commentEl(commentNew.id, commentNew.comment);
+      //console.log(list, listComment);
       //finally calls commentEl function with correct ul and posts comment as li
       $(list).append(listComment);
     }
   }
+
+  // create Comment class here
+class Comment {
+    constructor(comment, id) {
+      this.$comment = comment;
+      this.$id = id;
+  
+      this.findImage(comment, id);
+      this.commentEl(comment, id);
+      this.all();
+    }
+  
+    findImage(comment, id) {
+      //find image object from image.js
+      let commArray = Image.all[id].comments;
+      //push comment into object
+      commArray.push(comment);
+      return Image.all[id];
+    }
+  
+    commentEl(comment, id) {
+      return `<li id="newComm-${this.$id}">${this.$comment}</li>`;
+    }
+    //push new Comment into allComment array
+    all() {
+      this.constructor.allComments.push(this);
+      //console.log(this.constructor.allComments);
+    }
+  }
+  
+  Comment.allComments = [];
   

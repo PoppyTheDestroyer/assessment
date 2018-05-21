@@ -1,6 +1,5 @@
 class CommentsController {
   constructor() {
-    this.$addCommentForm = $(".add-comment");
     this.$submitComment = $(".submit");
     this.$userText = $(".user-text");
     this.$allComments = $(".all-comments");
@@ -23,8 +22,7 @@ class CommentsController {
       let commentNew = new Comment(comment, id);
       //console.log(commentNew);
       this.render(commentNew);
-      //Only resetting first form - id only applies to first - fix later
-      document.getElementById("add-comment").reset();
+      document.getElementById(`add-comment-${id}`).reset();
     });
   }
 
@@ -33,6 +31,7 @@ class CommentsController {
     let list = `#comments-${commentNew.$id}`;
     //variable sets up commentEl function with new Comment
     let listComment = commentNew.commentEl(commentNew.id, commentNew.comment);
+    //console.log(list, listComment);
     //finally calls commentEl function with correct ul and posts comment as li
     $(list).append(listComment);
   }
