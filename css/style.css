@@ -18,7 +18,7 @@ h1 {
 
 .image-group {
     border: 1px #ddd;
-    max-width: 900px;
+    width: 900px;
 }
 
 .comment-label {
@@ -27,4 +27,8 @@ h1 {
 
 li {
     margin-top: 5px;
+}
+
+.image-group:hover {
+    background-color: #eee;
 }

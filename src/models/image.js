@@ -11,18 +11,18 @@ function Image(title, url) {
 
 Image.prototype.imageEl = function() {
   return `<div class="image">
-  <div class="image-group">
+  <label for="comment-description-${this.id}" class="image-group">
     <h5><button class="destroy-image btn btn-primary">&times;</button><strong>${this.title}</strong></h5>
     <ul id="image-${this.id}" data-id="${this.id}">
       <img src="${this.url}"></img>
       <ul id="comments-${this.id}"></ul>
       <form id="add-comment-${this.id}" class="add-comment" data-id=${this.id} action="#" method="post">
-        <label class="comment-label" for="comment-description">Comment: </label>
-        <input type="text" id="comment-description-${this.id}" class="user-text" name="comment-description" placeholder="comment">
+        <label class="comment-label" for="comment-description-${this.id}">Comment: </label>
+        <input type="text" id="comment-description-${this.id}" class="user-text" name="comment-description-${this.id}" placeholder="comment">
         <input id="${this.id}" class="submit btn btn-primary" type="submit" value="(+) add comment">
       </form>
     </ul>
-  </div>
+  </label>
 </div>`;
 };
 
