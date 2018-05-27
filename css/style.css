@@ -19,6 +19,7 @@ h1 {
 .image-group {
     border: 1px #ddd;
     width: 900px;
+    margin: 10px 20px;
 }
 
 .comment-label {
