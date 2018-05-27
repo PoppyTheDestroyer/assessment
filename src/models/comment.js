@@ -3,9 +3,7 @@ class Comment {
   constructor(comment, id) {
     this.$comment = comment;
     this.$id = id;
-
     this.findImage(comment, id);
-    this.commentEl(comment, id);
     this.all();
   }
 
@@ -17,13 +15,15 @@ class Comment {
     return Image.all[id];
   }
 
-  commentEl(comment, id) {
+  //Renders the comment as a li with the id number matching 
+  //image number
+  commentEl() {
     return `<li id="newComm-${this.$id}">${this.$comment}</li>`;
   }
   //push new Comment into allComment array
   all() {
     this.constructor.allComments.push(this);
-    //console.log(this.constructor.allComments);
+    // console.log(this.constructor.allComments);
   }
 }
 

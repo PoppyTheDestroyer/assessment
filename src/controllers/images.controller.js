@@ -30,12 +30,13 @@ ImagesController.prototype.destroyImageLiveEventListener = function() {
       .remove();
   });
 };
-//Defines render function, which calls imageEl function 
-//
+//Defines render function, which determines where to render
+//the contents of the imageEl function 
 ImagesController.render = function(image) {
   $("#images").append(image.imageEl());
 };
 
+//Initiates the 
 ImagesController.prototype.init = function() {
   this.hideCommentForm();
   this.destroyImageLiveEventListener();

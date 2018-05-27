@@ -9,6 +9,7 @@ function Image(title, url) {
   this.constructor.all.push(this);
 }
 
+//Defines what to render
 Image.prototype.imageEl = function() {
   return `<div class="image">
   <label for="comment-description-${this.id}" class="image-group">
@@ -33,7 +34,7 @@ Image.load = function() {
     var newImage = new Image(image.title, image.url)
     ImagesController.render(newImage)
     //remove comment out to demonstrate findImage()
-    //console.log(Image.all);
+    // console.log(Image.all);
   })
 }
 

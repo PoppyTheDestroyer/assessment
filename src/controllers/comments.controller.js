@@ -19,7 +19,7 @@ class CommentsController {
       //find image ID - set same as input ID
       let imageID = `image-${id}`;
       let commentNew = new Comment(comment, id);
-      //console.log(commentNew);
+      // console.log(commentNew);
       this.render(commentNew);
       document.getElementById(`add-comment-${id}`).reset();
     });
@@ -30,7 +30,7 @@ class CommentsController {
     let list = `#comments-${commentNew.$id}`;
     //variable sets up commentEl function with new Comment
     let listComment = commentNew.commentEl(commentNew.id, commentNew.comment);
-    //console.log(list, listComment);
+    // console.log(list, listComment);
     //finally calls commentEl function with correct ul and posts comment as li
     $(list).append(listComment);
   }
