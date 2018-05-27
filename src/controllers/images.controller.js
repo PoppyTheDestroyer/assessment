@@ -36,7 +36,6 @@ ImagesController.render = function(image) {
   $("#images").append(image.imageEl());
 };
 
-//Initiates the 
 ImagesController.prototype.init = function() {
   this.hideCommentForm();
   this.destroyImageLiveEventListener();
