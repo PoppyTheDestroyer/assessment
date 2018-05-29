@@ -7,6 +7,7 @@ function Image(title, url) {
   this.url = url;
   this.comments = [];
   this.constructor.all.push(this);
+  //console.log(this);
 }
 
 //Defines what to render
