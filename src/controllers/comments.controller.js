@@ -35,9 +35,9 @@ class CommentsController {
     let list = `#comments-${commentNew.$id}`;
     //variable sets up commentEl function with the new Comment,
     //creating the new li
-    let listComment = commentNew.commentEl();
-    // console.log(list, listComment);
+    let listItem = commentNew.commentEl();
+    // console.log(list, listItem);
     //finally adds new li to the correct ul, which appears on the page
-    $(list).append(listComment);
+    $(list).append(listItem);
   }
 }
