@@ -29,7 +29,7 @@ Image.prototype.imageEl = function() {
 
 Image.load = function() {
   //Iterates through array of image objects,
-  //loads them onto DOM them using render function from images.controller
+  //Displays them using render function from images.controller
   Image.defaults.map(function(image){
     var newImage = new Image(image.title, image.url)
     ImagesController.render(newImage)
