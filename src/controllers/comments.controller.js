@@ -19,6 +19,7 @@ class CommentsController {
       let comment = this.$userText[id].value;
       //find image ID - set same as input ID
       let imageID = `image-${id}`;
+      // console.log(imageID);
       //Create new Comment using Comment Constructor with the 
       //comment and id variables as arguments
       let commentNew = new Comment(comment, id);
