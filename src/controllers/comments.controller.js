@@ -24,6 +24,7 @@ class CommentsController {
       let commentNew = new Comment(comment, id);
       // console.log(commentNew);
       this.render(commentNew);
+      //Resets form after submission
       document.getElementById(`add-comment-${id}`).reset();
     });
   }
